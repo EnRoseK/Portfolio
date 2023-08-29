@@ -1,0 +1,29 @@
+.button {
+  padding: 6px 16px;
+  border-radius: 12px;
+  background-color: $light-900;
+  color: $light-50;
+  @include transition-ease();
+  @include body2();
+
+  &:hover {
+    background-color: $light-700;
+  }
+
+  &:active {
+    background-color: $light-800;
+  }
+
+  &.dark {
+    background-color: $dark-900;
+    color: $dark-50;
+
+    &:hover {
+      background-color: $dark-700;
+    }
+
+    &:active {
+      background-color: $dark-800;
+    }
+  }
+}

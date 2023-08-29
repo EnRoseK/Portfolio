@@ -1,0 +1,144 @@
+.about {
+  padding: 96px 0;
+  background-color: $light-50;
+  @include transition-ease();
+
+  &.dark {
+    background-color: $dark-50;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+
+    @include mobile {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__picture {
+    padding-right: 144px;
+
+    @include mobile {
+      padding-right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    @include tablet {
+      padding-right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .picture-container {
+      width: 440px;
+      height: 520px;
+      position: relative;
+
+      @include mobile {
+        width: 320px;
+        height: 380px;
+      }
+
+      .background {
+        border: 8px solid $light-50;
+        width: 400px;
+        height: 480px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $light-200;
+        @include transition-ease();
+
+        @include mobile {
+          width: 320px;
+          height: 360px;
+          top: 20px;
+          left: 0;
+          right: 0;
+          bottom: auto;
+        }
+
+        &.dark {
+          border: 8px solid $dark-50;
+          background-color: $dark-200;
+        }
+      }
+
+      .picture {
+        border: 8px solid $light-50;
+        width: 400px;
+        height: 480px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: white;
+        z-index: 1;
+        @include transition-ease();
+
+        @include mobile {
+          width: 280px;
+          height: 360px;
+          right: 20px;
+        }
+
+        &.dark {
+          border: 8px solid $dark-50;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+        }
+      }
+    }
+  }
+
+  &__text {
+    .title {
+      margin-bottom: 24px;
+      color: $light-900;
+      @include heading-h3(semibold);
+      @include transition-ease();
+
+      &.dark {
+        color: $dark-900;
+      }
+    }
+
+    .description {
+      color: $light-600;
+      @include body2();
+      @include transition-ease();
+
+      &.dark {
+        color: $dark-600;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

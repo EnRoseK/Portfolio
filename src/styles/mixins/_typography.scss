@@ -1,0 +1,148 @@
+@mixin heading-h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 72px;
+  letter-spacing: -1.2px;
+
+  @include tablet {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.96px;
+  }
+
+  @include mobile {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 40px;
+  }
+}
+
+@mixin heading-h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -0.72px;
+
+  @include tablet {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.36px;
+  }
+
+  @include mobile {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.36px;
+  }
+}
+
+@mixin heading-h3($weight: semibold) {
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.6px;
+
+  @if $weight == semibold {
+    font-weight: 600;
+  } @else if $weight == bold {
+    font-weight: 700;
+  }
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.48px;
+
+    @if $weight == semibold {
+      font-weight: 600;
+    } @else if $weight == bold {
+      font-weight: 700;
+    }
+  }
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.48px;
+
+    @if $weight == semibold {
+      font-weight: 600;
+    } @else if $weight == bold {
+      font-weight: 700;
+    }
+  }
+}
+
+@mixin subtitle($weight: normal) {
+  font-size: 20px;
+  line-height: 28px;
+
+  @if $weight == normal {
+    font-weight: 400;
+  } @else if $weight == semibold {
+    font-weight: 600;
+  }
+
+  @include tablet {
+    font-size: 18px;
+    line-height: 28px;
+
+    @if $weight == normal {
+      font-weight: 400;
+    } @else if $weight == semibold {
+      font-weight: 600;
+    }
+  }
+
+  @include tablet {
+    font-size: 18px;
+    line-height: 28px;
+
+    @if $weight == normal {
+      font-weight: 400;
+    } @else if $weight == semibold {
+      font-weight: 600;
+    }
+  }
+}
+
+@mixin body1 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+
+  @include tablet {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  @include mobile {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+@mixin body2($underline: false) {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+
+  @if $underline {
+    text-decoration: underline;
+  }
+}
+
+@mixin body3($weight: normal) {
+  font-size: 14px;
+  line-height: 20px;
+
+  @if $weight == normal {
+    font-weight: 400;
+  } @else if $weight == medium {
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,13 @@
+.tag {
+  padding: 4px 20px;
+  border-radius: 12px;
+  background-color: $light-200;
+  color: $light-600;
+  @include body3(medium);
+  @include transition-ease();
+
+  &.dark {
+    background-color: $dark-200;
+    color: $dark-600;
+  }
+}

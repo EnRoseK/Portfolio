@@ -1,0 +1,95 @@
+.header {
+  width: 100%;
+  padding: 16px 0;
+  background-color: $light-default;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+
+  &.dark {
+    background-color: $dark-default;
+  }
+
+  #{&}__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #{&}__logo {
+    color: $light-900;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px; /* 120% */
+    letter-spacing: -0.6px;
+    cursor: pointer;
+    @include transition-ease();
+
+    &.dark {
+      color: $dark-900;
+    }
+  }
+
+  #{&}__navigation {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include mobile {
+      display: none;
+    }
+
+    &-item {
+      @include body2;
+      @include transition-ease;
+      color: $light-600;
+      cursor: pointer;
+
+      &:hover {
+        color: $light-900;
+      }
+
+      &:active {
+        color: $light-600;
+      }
+
+      &.dark {
+        color: $dark-600;
+
+        &:hover {
+          color: $dark-900;
+        }
+
+        &:active {
+          color: $dark-600;
+        }
+      }
+    }
+
+    &-divider {
+      width: 1px;
+      height: 24px;
+      background-color: $light-100;
+      @include transition-ease();
+
+      &.dark {
+        background-color: $dark-100;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+  }
+
+  #{&}__hamburger {
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+}
